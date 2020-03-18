@@ -10,6 +10,10 @@ RUN apk add --quiet --no-cache ca-certificates curl unzip && \
 	curl -sSL "https://github.com/rancher/rancher-compose/releases/download/v${RANCHER_COMPOSE_VERSION}/rancher-compose-linux-amd64-v${RANCHER_COMPOSE_VERSION}.tar.gz" | tar -xzp -C /usr/bin/ --strip-components=2 && \
 	rm -rf /var/cache/*
 
+RUN apk add --quiet --no-cache ca-certificates curl unzip && \
+		curl -sSL "https://releases.rancher.com/cli/v0.6.14/rancher-linux-amd64-v0.6.14.tar.gz" | tar -xzp -C /usr/bin/ --strip-components=2 && \
+		rm -rf /var/cache/*
+
 RUN		apk -v --no-cache add \
 			less \
 			groff \
